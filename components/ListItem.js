@@ -9,7 +9,7 @@ export const ListItem = () => {
       </View>
       <View style={styles.rightContainer}>
         <Text numberOfLines={3} style={styles.text}>
-          忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術
+          a忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術
         </Text>
         <Text style={styles.subText}>News-app</Text>
       </View>
