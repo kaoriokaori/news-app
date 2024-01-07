@@ -5,7 +5,9 @@ import { ListItem } from "./components/ListItem";
 export default function App() {
   return (
     <View style={styles.container}>
-      <ListItem />
+      <ListItem imageUrl={"https://picsum.photos/id/1/200/300"} title="Here you can view all the images Lorem Picsum provides.Here you can view all the images Lorem Picsum provides." author="news-app" />
+      <ListItem imageUrl={"https://picsum.photos/id/2/200/300"} title="Here you can view all the images Lorem Picsum provides." author="news-app" />
+      <ListItem imageUrl={"https://picsum.photos/id/3/200/300"} title="Here you can view all the images Lorem Picsum provides." author="news-app" />
       <StatusBar style="auto" />
     </View>
   );
@@ -16,26 +18,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee",
     alignItems: "center",
     justifyContent: "center",
-  },
-  itemContainer: {
-    height: 100,
-    width: "100%",
-    backgroundColor: "white",
-    flexDirection: "row",
-  },
-  leftContainer: {
-    width: 100,
-  },
-  rightContainer: {
-    flex: 1,
-    padding: 10,
-    justifyContent: "space-between",
-  },
-  text: {
-    fontSize: 16,
-  },
-  subText: {
-    fontSize: 12,
-    color: "gray",
   },
 });

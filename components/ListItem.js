@@ -1,17 +1,24 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Image, View, Text } from "react-native";
 
-export const ListItem = () => {
+// @param {
+//   ImageUrl:画像URL(string)
+//   title:タイトル(string)
+//   author:ニュース提供元(string)
+// } props
+// @returns
+
+export const ListItem = (props) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
-        <Image style={{ width: 100, height: 100 }} source={{ uri: "https://picsum.photos/id/3/200/300" }} />
+        <Image style={{ width: 100, height: 100 }} source={{ uri: props.imageUrl }} />
       </View>
       <View style={styles.rightContainer}>
         <Text numberOfLines={3} style={styles.text}>
-          a忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術 忙しいビジネスマンも10分でできる簡単投資術
+          {props.title}
         </Text>
-        <Text style={styles.subText}>News-app</Text>
+        <Text style={styles.subText}>{props.author}</Text>
       </View>
     </View>
   );
@@ -23,6 +30,7 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "white",
     flexDirection: "row",
+    margin: 5,
   },
   leftContainer: {
     width: 100,
