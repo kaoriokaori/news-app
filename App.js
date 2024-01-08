@@ -1,22 +1,31 @@
+import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Image, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, FlatList } from "react-native";
 import { ListItem } from "./components/ListItem";
+// import articles from "./dummies/articles.json";
 
 export default function App() {
+  const [articles, setArticles] = useState([]);
+  // const items = articles.map((article, index) => {
+  //   return <ListItem imageUrl={article.urlToImage} title={article.title} author={article.author} key={index.toString()} />;
+  // });
+
   return (
-    <View style={styles.container}>
-      <ListItem imageUrl={"https://picsum.photos/id/1/200/300"} title="Here you can view all the images Lorem Picsum provides.Here you can view all the images Lorem Picsum provides." author="news-app" />
-      <ListItem imageUrl={"https://picsum.photos/id/2/200/300"} title="Here you can view all the images Lorem Picsum provides." author="news-app" />
-      <ListItem imageUrl={"https://picsum.photos/id/3/200/300"} title="Here you can view all the images Lorem Picsum provides." author="news-app" />
+    <SafeAreaView style={styles.container}>
+      <FlatList data={articles} renderItem={({ item }) => (
+      <ListItem imageUrl={item.urlToImage} title={item.title} author={item.author} />
+      )}
+      keyExtractor={(item, index) => index.toString()}
+      />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#eee",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
+
