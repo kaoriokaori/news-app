@@ -11,7 +11,6 @@ export const HomeScreen = ({ navigation }) => {
   const fetchArticles = async () => {
     try {
       const response = await axios.get(URL);
-      console.log(response.data.articles);
       setArticles(response.data.articles);
     } catch (error) {
       console.error(error);
